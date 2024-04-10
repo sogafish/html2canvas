@@ -17,6 +17,7 @@ export type Options = CloneOptions &
     };
 
 const html2canvas = (element: HTMLElement, options: Partial<Options> = {}): Promise<HTMLCanvasElement> => {
+    console.info('________________________html2canvas');
     return renderElement(element, options);
 };
 
