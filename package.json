@@ -6,7 +6,7 @@
     "module": "dist/html2canvas.esm.js",
     "typings": "dist/types/index.d.ts",
     "browser": "dist/html2canvas.js",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "author": {
         "name": "Niklas von Hertzen",
         "email": "niklasvh@gmail.com",
@@ -97,9 +97,9 @@
         "yargs": "^17.0.1"
     },
     "scripts": {
-        "postinstall": "npm run build:minify",
+        "postinstall": "npm run build",
         "prebuild": "rimraf dist/ && rimraf build/ && mkdirp dist && mkdirp build",
-        "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run build:create-reftest-list && npm run build:testrunner && npm run build:minify",
+        "build": "tsc --module commonjs && rollup -c rollup.config.js && npm run build:create-reftest-list && npm run build:testrunner && npm run build:minify",
         "build:testrunner": "rollup -c tests/rollup.config.ts",
         "build:minify": "uglifyjs --compress --comments /^!/ -o dist/html2canvas.min.js --mangle -- dist/html2canvas.js",
         "build:reftest-result-list": "ts-node scripts/create-reftest-result-list.ts",
